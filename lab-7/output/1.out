@@ -1,1 +1,301 @@
        wId wName                                          wCap        sId        nId
+         1 Supplier#000000001____EGYPT                    2490          1          4
+         2 Supplier#000000001____ROMANIA                  3066          1         19
+         3 Supplier#000000001____MOROCCO                  2172          1         15
+         4 Supplier#000000002____VIETNAM                  2814          2         21
+         5 Supplier#000000002____SAUDI ARABIA             2379          2         20
+         6 Supplier#000000002____UNITED KINGDOM           2109          2         23
+         7 Supplier#000000003____ALGERIA                  3009          3          0
+         8 Supplier#000000003____JAPAN                    2556          3         12
+         9 Supplier#000000003____IRAN                     2592          3         10
+        10 Supplier#000000004____CANADA                   3369          4          3
+        11 Supplier#000000004____IRAN                     2958          4         10
+        12 Supplier#000000004____UNITED KINGDOM           2892          4         23
+        13 Supplier#000000005____EGYPT                    1878          5          4
+        14 Supplier#000000005____CANADA                   2595          5          3
+        15 Supplier#000000005____VIETNAM                  2097          5         21
+        16 Supplier#000000006____IRAN                     2598          6         10
+        17 Supplier#000000006____CANADA                   2379          6          3
+        18 Supplier#000000006____INDIA                    2208          6          8
+        19 Supplier#000000007____CANADA                   2265          7          3
+        20 Supplier#000000007____ROMANIA                  2841          7         19
+        21 Supplier#000000007____RUSSIA                   2145          7         22
+        22 Supplier#000000008____CANADA                   3132          8          3
+        23 Supplier#000000008____EGYPT                    2757          8          4
+        24 Supplier#000000008____ROMANIA                  2697          8         19
+        25 Supplier#000000009____IRAQ                     2691          9         11
+        26 Supplier#000000009____EGYPT                    2385          9          4
+        27 Supplier#000000009____CANADA                   2211          9          3
+        28 Supplier#000000010____GERMANY                  2892         10          7
+        29 Supplier#000000010____CANADA                   2487         10          3
+        30 Supplier#000000010____KENYA                    2547         10         14
+        31 Supplier#000000011____EGYPT                    2598         11          4
+        32 Supplier#000000011____ROMANIA                  2643         11         19
+        33 Supplier#000000011____UNITED KINGDOM           2760         11         23
+        34 Supplier#000000012____SAUDI ARABIA             2427         12         20
+        35 Supplier#000000012____INDONESIA                2163         12          9
+        36 Supplier#000000012____JAPAN                    2325         12         12
+        37 Supplier#000000013____EGYPT                    2580         13          4
+        38 Supplier#000000013____MOZAMBIQUE               2808         13         16
+        39 Supplier#000000013____JAPAN                    2079         13         12
+        40 Supplier#000000014____CANADA                   2376         14          3
+        41 Supplier#000000014____EGYPT                    3195         14          4
+        42 Supplier#000000014____BRAZIL                   2724         14          2
+        43 Supplier#000000015____SAUDI ARABIA             3273         15         20
+        44 Supplier#000000015____IRAN                     3384         15         10
+        45 Supplier#000000015____EGYPT                    2889         15          4
+        46 Supplier#000000016____SAUDI ARABIA             2958         16         20
+        47 Supplier#000000016____CANADA                   2622         16          3
+        48 Supplier#000000016____CHINA                    2766         16         18
+        49 Supplier#000000017____ROMANIA                  2520         17         19
+        50 Supplier#000000017____INDONESIA                2388         17          9
+        51 Supplier#000000017____CANADA                   2337         17          3
+        52 Supplier#000000018____ROMANIA                  2793         18         19
+        53 Supplier#000000018____MOROCCO                  2688         18         15
+        54 Supplier#000000018____CANADA                   3069         18          3
+        55 Supplier#000000019____ROMANIA                  3654         19         19
+        56 Supplier#000000019____EGYPT                    2709         19          4
+        57 Supplier#000000019____INDONESIA                2616         19          9
+        58 Supplier#000000020____BRAZIL                   2625         20          2
+        59 Supplier#000000020____UNITED STATES            1851         20         24
+        60 Supplier#000000020____CANADA                   2862         20          3
+        61 Supplier#000000021____CANADA                   2886         21          3
+        62 Supplier#000000021____MOZAMBIQUE               2148         21         16
+        63 Supplier#000000021____BRAZIL                   1980         21          2
+        64 Supplier#000000022____KENYA                    3261         22         14
+        65 Supplier#000000022____VIETNAM                  3084         22         21
+        66 Supplier#000000022____ALGERIA                  2313         22          0
+        67 Supplier#000000023____UNITED KINGDOM           2349         23         23
+        68 Supplier#000000023____SAUDI ARABIA             2547         23         20
+        69 Supplier#000000023____IRAN                     2187         23         10
+        70 Supplier#000000024____INDONESIA                2475         24          9
+        71 Supplier#000000024____ALGERIA                  2391         24          0
+        72 Supplier#000000024____ROMANIA                  2220         24         19
+        73 Supplier#000000025____BRAZIL                   2745         25          2
+        74 Supplier#000000025____ALGERIA                  2688         25          0
+        75 Supplier#000000025____EGYPT                    1890         25          4
+        76 Supplier#000000026____EGYPT                    2652         26          4
+        77 Supplier#000000026____VIETNAM                  2190         26         21
+        78 Supplier#000000026____ETHIOPIA                 1956         26          5
+        79 Supplier#000000027____EGYPT                    2544         27          4
+        80 Supplier#000000027____IRAN                     2487         27         10
+        81 Supplier#000000027____ETHIOPIA                 2796         27          5
+        82 Supplier#000000028____MOZAMBIQUE               3411         28         16
+        83 Supplier#000000028____INDONESIA                2823         28          9
+        84 Supplier#000000028____IRAN                     2376         28         10
+        85 Supplier#000000029____JAPAN                    2172         29         12
+        86 Supplier#000000029____INDONESIA                1881         29          9
+        87 Supplier#000000029____EGYPT                    2265         29          4
+        88 Supplier#000000030____CANADA                   3162         30          3
+        89 Supplier#000000030____ROMANIA                  2028         30         19
+        90 Supplier#000000030____IRAN                     2544         30         10
+        91 Supplier#000000031____ALGERIA                  2400         31          0
+        92 Supplier#000000031____JAPAN                    2226         31         12
+        93 Supplier#000000031____IRAN                     2337         31         10
+        94 Supplier#000000032____CANADA                   2913         32          3
+        95 Supplier#000000032____INDIA                    2868         32          8
+        96 Supplier#000000032____SAUDI ARABIA             2856         32         20
+        97 Supplier#000000033____EGYPT                    2349         33          4
+        98 Supplier#000000033____JAPAN                    2367         33         12
+        99 Supplier#000000033____CANADA                   2265         33          3
+       100 Supplier#000000034____MOZAMBIQUE               2100         34         16
+       101 Supplier#000000034____ALGERIA                  2292         34          0
+       102 Supplier#000000034____BRAZIL                   2478         34          2
+       103 Supplier#000000035____ROMANIA                  2898         35         19
+       104 Supplier#000000035____BRAZIL                   2835         35          2
+       105 Supplier#000000035____MOZAMBIQUE               2226         35         16
+       106 Supplier#000000036____BRAZIL                   2256         36          2
+       107 Supplier#000000036____ALGERIA                  2070         36          0
+       108 Supplier#000000036____MOZAMBIQUE               1917         36         16
+       109 Supplier#000000037____BRAZIL                   3069         37          2
+       110 Supplier#000000037____CANADA                   2634         37          3
+       111 Supplier#000000037____IRAN                     2505         37         10
+       112 Supplier#000000038____JAPAN                    3210         38         12
+       113 Supplier#000000038____ROMANIA                  3300         38         19
+       114 Supplier#000000038____SAUDI ARABIA             2550         38         20
+       115 Supplier#000000039____SAUDI ARABIA             2967         39         20
+       116 Supplier#000000039____CANADA                   2739         39          3
+       117 Supplier#000000039____MOZAMBIQUE               2961         39         16
+       118 Supplier#000000040____BRAZIL                   2883         40          2
+       119 Supplier#000000040____INDONESIA                2475         40          9
+       120 Supplier#000000040____EGYPT                    2184         40          4
+       121 Supplier#000000041____CANADA                   3132         41          3
+       122 Supplier#000000041____SAUDI ARABIA             2430         41         20
+       123 Supplier#000000041____MOZAMBIQUE               2736         41         16
+       124 Supplier#000000042____EGYPT                    2655         42          4
+       125 Supplier#000000042____UNITED KINGDOM           2409         42         23
+       126 Supplier#000000042____SAUDI ARABIA             2346         42         20
+       127 Supplier#000000043____CANADA                   2988         43          3
+       128 Supplier#000000043____ROMANIA                  2733         43         19
+       129 Supplier#000000043____BRAZIL                   2718         43          2
+       130 Supplier#000000044____MOZAMBIQUE               3135         44         16
+       131 Supplier#000000044____BRAZIL                   2601         44          2
+       132 Supplier#000000044____UNITED KINGDOM           2406         44         23
+       133 Supplier#000000045____CANADA                   2898         45          3
+       134 Supplier#000000045____IRAN                     2649         45         10
+       135 Supplier#000000045____UNITED KINGDOM           2631         45         23
+       136 Supplier#000000046____MOZAMBIQUE               3198         46         16
+       137 Supplier#000000046____CANADA                   3501         46          3
+       138 Supplier#000000046____JAPAN                    2790         46         12
+       139 Supplier#000000047____SAUDI ARABIA             2622         47         20
+       140 Supplier#000000047____INDONESIA                2037         47          9
+       141 Supplier#000000047____MOZAMBIQUE               2199         47         16
+       142 Supplier#000000048____IRAN                     3408         48         10
+       143 Supplier#000000048____JAPAN                    2622         48         12
+       144 Supplier#000000048____BRAZIL                   2517         48          2
+       145 Supplier#000000049____CANADA                   3030         49          3
+       146 Supplier#000000049____UNITED KINGDOM           2157         49         23
+       147 Supplier#000000049____VIETNAM                  2250         49         21
+       148 Supplier#000000050____SAUDI ARABIA             3105         50         20
+       149 Supplier#000000050____GERMANY                  2394         50          7
+       150 Supplier#000000050____KENYA                    2712         50         14
+       151 Supplier#000000051____CANADA                   4146         51          3
+       152 Supplier#000000051____SAUDI ARABIA             2874         51         20
+       153 Supplier#000000051____EGYPT                    3105         51          4
+       154 Supplier#000000052____CANADA                   2565         52          3
+       155 Supplier#000000052____EGYPT                    3027         52          4
+       156 Supplier#000000052____IRAN                     2445         52         10
+       157 Supplier#000000053____JAPAN                    2841         53         12
+       158 Supplier#000000053____BRAZIL                   2055         53          2
+       159 Supplier#000000053____CANADA                   2109         53          3
+       160 Supplier#000000054____BRAZIL                   2838         54          2
+       161 Supplier#000000054____SAUDI ARABIA             2535         54         20
+       162 Supplier#000000054____ALGERIA                  2478         54          0
+       163 Supplier#000000055____UNITED KINGDOM           3027         55         23
+       164 Supplier#000000055____IRAQ                     2568         55         11
+       165 Supplier#000000055____BRAZIL                   2682         55          2
+       166 Supplier#000000056____MOROCCO                  2004         56         15
+       167 Supplier#000000056____SAUDI ARABIA             2301         56         20
+       168 Supplier#000000056____EGYPT                    2727         56          4
+       169 Supplier#000000057____CANADA                   2538         57          3
+       170 Supplier#000000057____GERMANY                  2397         57          7
+       171 Supplier#000000057____JORDAN                   2244         57         13
+       172 Supplier#000000058____ALGERIA                  2619         58          0
+       173 Supplier#000000058____VIETNAM                  2124         58         21
+       174 Supplier#000000058____EGYPT                    1815         58          4
+       175 Supplier#000000059____CANADA                   3012         59          3
+       176 Supplier#000000059____IRAN                     2343         59         10
+       177 Supplier#000000059____MOZAMBIQUE               2322         59         16
+       178 Supplier#000000060____IRAN                     2643         60         10
+       179 Supplier#000000060____ROMANIA                  2802         60         19
+       180 Supplier#000000060____GERMANY                  2268         60          7
+       181 Supplier#000000061____EGYPT                    2571         61          4
+       182 Supplier#000000061____MOZAMBIQUE               2322         61         16
+       183 Supplier#000000061____IRAN                     2895         61         10
+       184 Supplier#000000062____INDONESIA                2799         62          9
+       185 Supplier#000000062____EGYPT                    2334         62          4
+       186 Supplier#000000062____SAUDI ARABIA             2118         62         20
+       187 Supplier#000000063____IRAN                     2778         63         10
+       188 Supplier#000000063____SAUDI ARABIA             2454         63         20
+       189 Supplier#000000063____MOZAMBIQUE               2256         63         16
+       190 Supplier#000000064____IRAN                     2226         64         10
+       191 Supplier#000000064____CANADA                   3276         64          3
+       192 Supplier#000000064____VIETNAM                  1968         64         21
+       193 Supplier#000000065____CANADA                   2418         65          3
+       194 Supplier#000000065____IRAN                     2121         65         10
+       195 Supplier#000000065____UNITED KINGDOM           2016         65         23
+       196 Supplier#000000066____EGYPT                    2652         66          4
+       197 Supplier#000000066____CANADA                   2607         66          3
+       198 Supplier#000000066____IRAN                     2403         66         10
+       199 Supplier#000000067____CANADA                   2406         67          3
+       200 Supplier#000000067____UNITED KINGDOM           2520         67         23
+       201 Supplier#000000067____MOROCCO                  1866         67         15
+       202 Supplier#000000068____CANADA                   3162         68          3
+       203 Supplier#000000068____ETHIOPIA                 2310         68          5
+       204 Supplier#000000068____UNITED KINGDOM           2406         68         23
+       205 Supplier#000000069____CANADA                   2655         69          3
+       206 Supplier#000000069____BRAZIL                   2487         69          2
+       207 Supplier#000000069____ROMANIA                  1824         69         19
+       208 Supplier#000000070____ROMANIA                  2268         70         19
+       209 Supplier#000000070____INDONESIA                2538         70          9
+       210 Supplier#000000070____JAPAN                    2091         70         12
+       211 Supplier#000000071____CANADA                   3267         71          3
+       212 Supplier#000000071____ALGERIA                  2568         71          0
+       213 Supplier#000000071____IRAN                     2229         71         10
+       214 Supplier#000000072____CANADA                   2445         72          3
+       215 Supplier#000000072____EGYPT                    2748         72          4
+       216 Supplier#000000072____IRAN                     2505         72         10
+       217 Supplier#000000073____BRAZIL                   3882         73          2
+       218 Supplier#000000073____JAPAN                    3366         73         12
+       219 Supplier#000000073____VIETNAM                  3153         73         21
+       220 Supplier#000000074____IRAN                     2370         74         10
+       221 Supplier#000000074____ROMANIA                  2466         74         19
+       222 Supplier#000000074____JAPAN                    2283         74         12
+       223 Supplier#000000075____BRAZIL                   3150         75          2
+       224 Supplier#000000075____SAUDI ARABIA             2811         75         20
+       225 Supplier#000000075____GERMANY                  2655         75          7
+       226 Supplier#000000076____IRAN                     2775         76         10
+       227 Supplier#000000076____EGYPT                    2004         76          4
+       228 Supplier#000000076____BRAZIL                   2274         76          2
+       229 Supplier#000000077____KENYA                    3201         77         14
+       230 Supplier#000000077____EGYPT                    3015         77          4
+       231 Supplier#000000077____JORDAN                   2403         77         13
+       232 Supplier#000000078____CANADA                   2475         78          3
+       233 Supplier#000000078____IRAN                     2946         78         10
+       234 Supplier#000000078____ETHIOPIA                 2283         78          5
+       235 Supplier#000000079____IRAN                     2568         79         10
+       236 Supplier#000000079____ARGENTINA                1989         79          1
+       237 Supplier#000000079____INDONESIA                2946         79          9
+       238 Supplier#000000080____EGYPT                    2262         80          4
+       239 Supplier#000000080____IRAN                     2475         80         10
+       240 Supplier#000000080____BRAZIL                   2349         80          2
+       241 Supplier#000000081____JAPAN                    2664         81         12
+       242 Supplier#000000081____ALGERIA                  2643         81          0
+       243 Supplier#000000081____BRAZIL                   2166         81          2
+       244 Supplier#000000082____CANADA                   3012         82          3
+       245 Supplier#000000082____MOZAMBIQUE               2733         82         16
+       246 Supplier#000000082____IRAN                     2829         82         10
+       247 Supplier#000000083____BRAZIL                   2379         83          2
+       248 Supplier#000000083____EGYPT                    3024         83          4
+       249 Supplier#000000083____INDONESIA                2571         83          9
+       250 Supplier#000000084____BRAZIL                   2970         84          2
+       251 Supplier#000000084____MOROCCO                  2664         84         15
+       252 Supplier#000000084____IRAN                     2577         84         10
+       253 Supplier#000000085____UNITED KINGDOM           2538         85         23
+       254 Supplier#000000085____JORDAN                   2634         85         13
+       255 Supplier#000000085____JAPAN                    2052         85         12
+       256 Supplier#000000086____EGYPT                    2826         86          4
+       257 Supplier#000000086____MOROCCO                  2862         86         15
+       258 Supplier#000000086____MOZAMBIQUE               2889         86         16
+       259 Supplier#000000087____SAUDI ARABIA             2451         87         20
+       260 Supplier#000000087____EGYPT                    3171         87          4
+       261 Supplier#000000087____VIETNAM                  2325         87         21
+       262 Supplier#000000088____VIETNAM                  2454         88         21
+       263 Supplier#000000088____ALGERIA                  2628         88          0
+       264 Supplier#000000088____SAUDI ARABIA             2154         88         20
+       265 Supplier#000000089____ALGERIA                  2904         89          0
+       266 Supplier#000000089____MOZAMBIQUE               2532         89         16
+       267 Supplier#000000089____IRAN                     2367         89         10
+       268 Supplier#000000090____IRAN                     2649         90         10
+       269 Supplier#000000090____MOROCCO                  2445         90         15
+       270 Supplier#000000090____SAUDI ARABIA             2787         90         20
+       271 Supplier#000000091____UNITED KINGDOM           2313         91         23
+       272 Supplier#000000091____KENYA                    2436         91         14
+       273 Supplier#000000091____ALGERIA                  2544         91          0
+       274 Supplier#000000092____JAPAN                    2238         92         12
+       275 Supplier#000000092____KENYA                    2394         92         14
+       276 Supplier#000000092____IRAQ                     2100         92         11
+       277 Supplier#000000093____JORDAN                   2451         93         13
+       278 Supplier#000000093____MOROCCO                  2520         93         15
+       279 Supplier#000000093____EGYPT                    2208         93          4
+       280 Supplier#000000094____EGYPT                    2373         94          4
+       281 Supplier#000000094____BRAZIL                   2970         94          2
+       282 Supplier#000000094____UNITED KINGDOM           2499         94         23
+       283 Supplier#000000095____EGYPT                    2529         95          4
+       284 Supplier#000000095____IRAN                     2262         95         10
+       285 Supplier#000000095____MOROCCO                  2499         95         15
+       286 Supplier#000000096____MOROCCO                  2904         96         15
+       287 Supplier#000000096____CANADA                   3081         96          3
+       288 Supplier#000000096____IRAN                     2058         96         10
+       289 Supplier#000000097____BRAZIL                   2742         97          2
+       290 Supplier#000000097____JAPAN                    2754         97         12
+       291 Supplier#000000097____EGYPT                    2967         97          4
+       292 Supplier#000000098____IRAN                     2268         98         10
+       293 Supplier#000000098____CANADA                   2808         98          3
+       294 Supplier#000000098____ALGERIA                  2487         98          0
+       295 Supplier#000000099____INDONESIA                3681         99          9
+       296 Supplier#000000099____BRAZIL                   3030         99          2
+       297 Supplier#000000099____MOROCCO                  2565         99         15
+       298 Supplier#000000100____VIETNAM                  2634        100         21
+       299 Supplier#000000100____JAPAN                    2556        100         12
+       300 Supplier#000000100____IRAN                     2811        100         10

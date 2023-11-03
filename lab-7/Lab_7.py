@@ -1,6 +1,30 @@
 import sqlite3
 from sqlite3 import Error
 
+# createTable creates a table warehouse and adds it to the TPC-H database. Table warehouse stores
+# data on the warehouses suppliers own and has the following schema/attributes:
+# w_warehousekey decimal(9,0) not null,
+# w_name char(100) not null,
+# w_capacity decimal(6,0) not null,
+# w_suppkey decimal(9,0) not null,
+# w_nationkey decimal(2,0) not null
+# w warehousekey is the unique identifier of the warehouse and has a numeric value. w name is the
+# name of the warehouse, while w capacity is its capacity. w suppkey is the identifier of the supplier
+# that owns the warehouse. A warehouse is owned by a single supplier, while a supplier can own
+# multiple warehouses. w nationkey is the identifier of the nation where the warehouse is located.
+# w suppkey and w nationkey take values from the corresponding attributes in tables supplier and
+# nation, respectively.
+# •dropTable drops/eliminates table warehouse together with all its data from the TPC-H database.
+# •populateTable populates table warehouse with tuples corresponding to every supplier in the database.
+# Three warehouses are created for every supplier. The nations where these warehouses are located are
+# those that have the largest number of lineitems supplied by the supplier that are ordered by customers
+# from that nation. In case of equality, the nations are sorted in alphabetical order and the first three
+# are selected. The name of a warehouse is obtained by concatenating the supplier name with “ ” and
+# with the name of the nation where the warehouse is located. In order to determine the capacity of a
+# warehouse, you have to compute the total size of the parts (p size) supplied by the supplier to the
+# customers in a nation. Then, the warehouse capacity is taken as the triple of the maximum total part
+# size across all the nations. The three warehouses owned by a supplier have the same capacity. Finally,
+# the w warehousekey value is set as an increasing number that is unique across the tuples in the table.
 
 def openConnection(_dbFile):
     print("++++++++++++++++++++++++++++++++++")
@@ -36,15 +60,13 @@ def createTable(_conn):
 
     try:
         _conn.execute("""
-            CREATE TABLE Warehouse (
-                W_ID INTEGER PRIMARY KEY AUTOINCREMENT,
-                W_NAME TEXT NOT NULL,
-                W_CAPACITY INTEGER NOT NULL,
-                S_ID INTEGER,
-                N_ID INTEGER,
-                FOREIGN KEY (S_ID) REFERENCES Supplier(S_ID),
-                FOREIGN KEY (N_ID) REFERENCES Nation(N_ID)
-            );
+        CREATE TABLE IF NOT EXISTS warehouse (
+            w_warehousekey decimal(9,0) not null,
+            w_name char(100) not null,
+            w_capacity decimal(6,0) not null,
+            w_suppkey decimal(9,0) not null,
+            w_nationkey decimal(2,0) not null
+        );
         """)
         print("Table created successfully")
     except Error as e:
@@ -56,17 +78,52 @@ def createTable(_conn):
 def dropTable(_conn):
     print("++++++++++++++++++++++++++++++++++")
     print("Drop tables")
-
+    try:
+        _conn.execute("DROP TABLE IF EXISTS warehouse;")
+        print("success")
+    except Error as e:
+        print(e)
     print("++++++++++++++++++++++++++++++++++")
-
 
 def populateTable(_conn):
     print("++++++++++++++++++++++++++++++++++")
     print("Populate table")
+    try:
+        _conn.execute("""
+        WITH temp_tb AS(
+        SELECT  *
+        FROM(
+            SELECT  supplier.s_suppkey AS supplier_key,
+                    supplier.s_name AS supplier_name,
+                    nation.n_nationkey AS cus_nationkey,
+                    nation.n_name AS cus_nationname,
+                    sum(part.p_size) AS total_size,
+                    count(*) AS total_lineitem,
+                    row_number() over (partition by supplier.s_suppkey order by count(*) DESC) AS rn
+            FROM    lineitem
+            JOIN    part ON lineitem.l_partkey = part.p_partkey
+            JOIN    supplier ON lineitem.l_suppkey = supplier.s_suppkey
+            JOIN    orders ON lineitem.l_orderkey = orders.o_orderkey
+            JOIN    customer ON orders.o_custkey = customer.c_custkey
+            JOIN    nation ON customer.c_nationkey = nation.n_nationkey
+            GROUP BY supplier.s_suppkey, nation.n_nationkey
+            ) WHERE rn <= 3
+        )
 
+        INSERT INTO warehouse (w_warehousekey,w_name,w_capacity,w_suppkey,w_nationkey)
+        SELECT  row_number() OVER () AS w_warehousekey,
+                supplier_name || '____' || cus_nationname AS w_name,
+                total_size*3 AS w_capacity,
+                supplier_key AS w_suppkey,
+                cus_nationkey AS w_nationkey
+        FROM    temp_tb;
+        """)
+        print("success")
+    except Error as e:
+        print(e)
     print("++++++++++++++++++++++++++++++++++")
 
-
+# q1: displays the entire content of the warehouse table sorted on w warehousekey by performing a SQL query
 def Q1(_conn):
     print("++++++++++++++++++++++++++++++++++")
     print("Q1")
@@ -77,13 +134,20 @@ def Q1(_conn):
         header = "{:>10} {:<40} {:>10} {:>10} {:>10}"
         output.write((header.format("wId", "wName", "wCap", "sId", "nId")) + '\n')
 
+        cursor = _conn.cursor()
+        cursor.execute("""
+        SELECT  *  FROM warehouse ORDER BY w_warehousekey;
+        """)
+        rows = cursor.fetchall()
+        for row in rows:
+            output.write(("{:>10} {:<40} {:>10} {:>10} {:>10}".format(row[0], row[1], row[2], row[3], row[4])) + '\n')
         output.close()
     except Error as e:
         print(e)
 
     print("++++++++++++++++++++++++++++++++++")
 
-
+# q2: computes the number of warehouses and the total capacity for the warehouses in every nation, result is sorted in decreasing order of the number of warehouses and of the capacity, then alphabetical order of the nation name
 def Q2(_conn):
     print("++++++++++++++++++++++++++++++++++")
     print("Q2")
@@ -94,13 +158,30 @@ def Q2(_conn):
         header = "{:<40} {:>10} {:>10}"
         output.write((header.format("nation", "numW", "totCap")) + '\n')
 
+        cursor = _conn.cursor()
+        cursor.execute("""
+        SELECT  nation.n_name AS nation,
+                count(*) AS numW,
+                sum(w_capacity) AS totCap
+        FROM    warehouse
+        JOIN    nation ON warehouse.w_nationkey = nation.n_nationkey
+        GROUP BY nation.n_name
+        ORDER BY numW DESC, totCap DESC, nation.n_name;
+        """)
+        rows = cursor.fetchall()
+        for row in rows:
+            output.write(("{:<40} {:>10} {:>10}".format(row[0], row[1], row[2])) + '\n')
+        
         output.close()
     except Error as e:
         print(e)
 
     print("++++++++++++++++++++++++++++++++++")
 
-
+# q3: computes the suppliers that have a warehouse in a given nation taken as input parameter. The
+# nation where warehouses are located is read from the input file input/3.in. Q3 prints the name of the
+# supplier, the nation of the supplier, and the name of the warehouse—sorted in alphabetical order by
+# supplier name.
 def Q3(_conn):
     print("++++++++++++++++++++++++++++++++++")
     print("Q3")
@@ -115,14 +196,30 @@ def Q3(_conn):
 
         header = "{:<20} {:<20} {:<40}"
         output.write((header.format("supplier", "nation", "warehouse")) + '\n')
-
+        
+        cursor = _conn.cursor()
+        cursor.execute("""
+        SELECT  supplier.s_name AS supplier,
+                nation.n_name AS nation,
+                warehouse.w_name AS warehouse
+        FROM    warehouse
+        JOIN    supplier ON warehouse.w_suppkey = supplier.s_suppkey
+        JOIN    nation ON warehouse.w_nationkey = nation.n_nationkey
+        WHERE   nation.n_name = ?
+        ORDER BY supplier.s_name;
+        """, (nation,))
+        rows = cursor.fetchall()
+        for row in rows:
+            output.write(("{:<20} {:<20} {:<40}".format(row[0], row[1], row[2])) + '\n')
+        
         output.close()
     except Error as e:
         print(e)
 
     print("++++++++++++++++++++++++++++++++++")
 
-
+# q4 finds the warehouses from a given region that have capacity larger than a given threshold. The region name and the minimum capacity are parameters stored in the file input/4.in. Q4 prints the
+# warehouse name and its capacity in decreasing order of the capacity.
 def Q4(_conn):
     print("++++++++++++++++++++++++++++++++++")
     print("Q4")
@@ -133,19 +230,34 @@ def Q4(_conn):
         cap = input.readline().strip()
         input.close()
 
-
         output = open('output/4.out', 'w')
 
         header = "{:<40} {:>10}"
         output.write((header.format("warehouse", "capacity")) + '\n')
-
+        
+        cursor = _conn.cursor()
+        cursor.execute("""
+        SELECT  w_name AS warehouse,
+                w_capacity AS capacity
+        FROM    warehouse
+        JOIN    nation ON warehouse.w_nationkey = nation.n_nationkey
+        JOIN    region ON nation.n_regionkey = region.r_regionkey
+        WHERE   region.r_name = ? AND w_capacity > ?
+        ORDER BY w_capacity DESC;
+        """, (region, cap))
+        rows = cursor.fetchall()
+        for row in rows:
+            output.write(("{:<40} {:>10}".format(row[0], row[1])) + '\n')
+    
         output.close()
     except Error as e:
         print(e)
 
     print("++++++++++++++++++++++++++++++++++")
 
-
+# q5: determines the total capacity of the warehouses belonging to suppliers from a given nation in every region. The suppliers' nation is a parameter stored in the file input/5.in. If there are no warehouses
+# in a region, then value 0 is printed for that region. Q5 prints the region and the capacity sorted
+# alphabetically by region.
 def Q5(_conn):
     print("++++++++++++++++++++++++++++++++++")
     print("Q5")
@@ -161,6 +273,20 @@ def Q5(_conn):
         header = "{:<20} {:>20}"
         output.write((header.format("region", "capacity")) + '\n')
 
+        cursor = _conn.cursor()
+        cursor.execute("""
+        SELECT  region.r_name AS region,
+                sum(w_capacity) AS capacity
+        FROM    warehouse
+        JOIN    nation ON warehouse.w_nationkey = nation.n_nationkey
+        JOIN    region ON nation.n_regionkey = region.r_regionkey
+        WHERE   nation.n_name = ?
+        GROUP BY region.r_name
+        ORDER BY region.r_name;
+        """, (nation,))
+        rows = cursor.fetchall()
+        for row in rows:
+            output.write(("{:<20} {:>20}".format(row[0], row[1])) + '\n')
         output.close()
     except Error as e:
         print(e)
