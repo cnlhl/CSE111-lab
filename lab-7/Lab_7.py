@@ -1,6 +1,7 @@
 import sqlite3
 from sqlite3 import Error
 
+
 def openConnection(_dbFile):
     print("++++++++++++++++++++++++++++++++++")
     print("Open database: ", _dbFile)
