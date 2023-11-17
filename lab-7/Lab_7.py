@@ -98,7 +98,6 @@ def populateTable(_conn):
         print(e)
     print("++++++++++++++++++++++++++++++++++")
 
-# q1: displays the entire content of the warehouse table sorted on w warehousekey by performing a SQL query
 def Q1(_conn):
     print("++++++++++++++++++++++++++++++++++")
     print("Q1")
@@ -122,7 +121,6 @@ def Q1(_conn):
 
     print("++++++++++++++++++++++++++++++++++")
 
-# q2: computes the number of warehouses and the total capacity for the warehouses in every nation, result is sorted in decreasing order of the number of warehouses and of the capacity, then alphabetical order of the nation name
 def Q2(_conn):
     print("++++++++++++++++++++++++++++++++++")
     print("Q2")
