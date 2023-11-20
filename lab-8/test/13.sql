@@ -1,5 +1,6 @@
 .eqp on
 .headers on
+.expert
 
 select s_name, count(*) as discounted_items
 from lineitem, supplier

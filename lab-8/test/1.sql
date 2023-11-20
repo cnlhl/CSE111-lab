@@ -1,5 +1,6 @@
 .eqp on
 .headers on
+.expert
 
 select count(*) as item_cnt
 from lineitem

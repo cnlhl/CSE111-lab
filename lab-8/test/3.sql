@@ -1,5 +1,6 @@
 .eqp on
 .headers on
+.expert
 
 select c_address, c_phone, c_acctbal
 from customer

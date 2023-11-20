@@ -1,5 +1,6 @@
 .eqp on
 .headers on
+.expert
 
 select substr(o_orderdate, 1, 4) as year, count(*) as item_cnt
 from orders, nation, supplier, lineitem

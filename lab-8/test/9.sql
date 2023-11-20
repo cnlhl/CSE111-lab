@@ -1,5 +1,6 @@
 .eqp on
 .headers on
+.expert
 
 select substr(l_receiptdate,1,7) as year_month, count(*) as items
 from lineitem, orders, customer

@@ -1,5 +1,6 @@
 .eqp on
 .headers on
+.expert
 
 select n_name, sum(s_acctbal) as total_acct_bal
 from supplier, nation 

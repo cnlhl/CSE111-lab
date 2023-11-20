@@ -1,5 +1,6 @@
 .eqp on
 .headers on
+.expert
 
 select r_name, count(*) as order_cnt
 from orders, customer, nation, region

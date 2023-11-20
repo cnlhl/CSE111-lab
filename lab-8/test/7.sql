@@ -1,5 +1,6 @@
 .eqp on
 .headers on
+.expert
 
 select sum(o_totalprice) as total_price
 from orders, customer, nation, region

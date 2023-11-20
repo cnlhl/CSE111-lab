@@ -1,5 +1,6 @@
 .eqp on
 .headers on
+.expert
 
 select distinct n_name
 from customer, nation, orders

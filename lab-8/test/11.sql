@@ -1,5 +1,6 @@
 .eqp on
 .headers on
+.expert
 
 select count(o_orderkey) as order_cnt
 from orders, customer, nation

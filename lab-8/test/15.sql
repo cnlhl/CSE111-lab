@@ -1,5 +1,6 @@
 .eqp on
 .headers on
+.expert
 
 select sum(c_acctbal) as tot_acct_bal
 from customer, region, nation

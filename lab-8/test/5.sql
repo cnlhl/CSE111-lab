@@ -1,5 +1,6 @@
 .eqp on
 .headers on
+.expert
 
 select l_receiptdate, l_returnflag, l_extendedprice, l_tax
 from lineitem
