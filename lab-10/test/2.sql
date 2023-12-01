@@ -1,4 +1,4 @@
-CREATE TRIGGER t2 AFTER UPDATE OF c_acctbal ON customer
+CREATE TRIGGER t2 AFTER UPDATE bal ON OF c_acctcustomer
 FOR EACH ROW
 WHEN (OLD.c_acctbal > 0 AND NEW.c_acctbal < 0)
 BEGIN

@@ -23,5 +23,5 @@ WHERE l_orderkey IN (
 
 SELECT COUNT(*) AS orders_cnt
 FROM orders
-WHERE o_orderpriority = 'HIGH' AND
+WHERE o_orderpriority = '2-HIGH' AND
     strftime('%Y-%m', o_orderdate) IN ('1995-09', '1995-10', '1995-11', '1995-12');

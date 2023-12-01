@@ -10,11 +10,8 @@ WHERE part.p_partkey IN (
     SELECT partsupp.ps_partkey
     FROM partsupp
     JOIN supplier ON partsupp.ps_suppkey = supplier.s_suppkey
-    WHERE supplier.s_nationkey IN (
-        SELECT nation.n_nationkey
-        FROM nation
-        WHERE nation.n_name IN ('KENYA', 'MOROCCO')
-    )
+    JOIN nation ON supplier.s_nationkey = nation.n_nationkey
+    WHERE nation.n_name = 'KENYA' OR 'MOROCCO'
 );
 
 SELECT nation.n_name AS country, count(*) AS parts_cnt
