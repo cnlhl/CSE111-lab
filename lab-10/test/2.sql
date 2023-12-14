@@ -1,8 +1,9 @@
-CREATE TRIGGER t2 AFTER UPDATE bal ON OF c_acctcustomer
+CREATE TRIGGER t2 AFTER UPDATE ON customer
 FOR EACH ROW
 WHEN (OLD.c_acctbal > 0 AND NEW.c_acctbal < 0)
 BEGIN
-    UPDATE customer SET c_comment = 'Negative balance!!!' WHERE c_custkey = NEW.c_custkey;
+    UPDATE customer SET c_comment = 'Negative balance!!!' 
+    WHERE c_custkey = NEW.c_custkey;
 END;
 
 UPDATE customer 
@@ -15,6 +16,5 @@ WHERE c_nationkey IN (
 
 SELECT COUNT(*) AS customer_cnt
 FROM customer
-WHERE c_nationkey IN (
-    SELECT n_nationkey FROM nation WHERE n_name = 'EGYPT'
-) AND c_acctbal < 0;
+JOIN nation ON c_nationkey = n_nationkey
+WHERE n_nationname = 'EGYPT' AND c_acctbal < 0;

@@ -2,7 +2,8 @@ CREATE TRIGGER t3 AFTER UPDATE ON customer
 FOR EACH ROW
 WHEN (NEW.c_acctbal > 0 AND OLD.c_acctbal < 0)
 BEGIN
-    UPDATE customer SET c_comment = 'Positive balance' WHERE c_custkey = NEW.c_custkey;
+    UPDATE customer SET c_comment = 'Positive balance' 
+    WHERE c_custkey = NEW.c_custkey;
 END;
 
 UPDATE customer 

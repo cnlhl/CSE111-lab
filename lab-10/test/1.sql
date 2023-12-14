@@ -3,7 +3,7 @@ FOR EACH ROW
 BEGIN
     UPDATE orders
     SET o_orderdate = '2023-12-01'
-    WHERE rowid = NEW.rowid;
+    WHERE o_orderkey = NEW.o_orderkey;
 END;
 
 INSERT INTO orders (o_orderkey, o_custkey, o_orderstatus, o_totalprice, o_orderdate, o_orderpriority, o_clerk, o_shippriority, o_comment)
@@ -15,4 +15,4 @@ SELECT  max(o_orderkey) FROM orders;
 
 SELECT COUNT(*) AS orders_cnt
 FROM orders
-WHERE o_orderdate >= '2023-01-01' AND o_orderdate < '2024-01-01';
+WHERE strftime('%Y', o_orderdate) = '2023';
